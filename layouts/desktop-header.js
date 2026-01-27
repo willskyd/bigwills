@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Facebook, Instagram, Linkedin, Twitter, Vk } from '../public/svg/social/IconSocial';
 
 
-const background = "/img/call.png"
+const background = "/img/call.webp"
 
 export default function DesktopHeader() {
 
@@ -149,8 +149,8 @@ export default function DesktopHeader() {
                                 <div className="img_holder" style={{ backgroundImage: `url(${background})` }}></div>
                                 
                               <p>
-                      <span>Toll Free:</span>{" "}<a href="tel:1-800-987-6543" style={{ color: "#fff", textDecoration: "none" }}>
-                                1-800-987-6543
+                      <span>Toll Free:</span>{" "}<a href="tel:+2349079632374" style={{ color: "#fff", textDecoration: "none" }}>
+                                +234 907 963 2374
                               </a>
                               </p>
 
