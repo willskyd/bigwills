@@ -28,15 +28,21 @@ const openSans = Open_Sans({
 
 export const metadata = {
     title: {
-        template: 'Industify NextJS | %s',
-        default: 'Industify | React NextJS Template',
+        template: 'Torqtech | %s',
+        default: 'Torqtech oil and gas services company',
+    },
+    icons: {
+        icon: "/favicon.ico",
+        // apple: "/apple-icon.png",
     },
 }
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            
+            <head>
+                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            </head>
             <body className={`${openSans.className} ${rubik.className}`}>
                 <Suspense fallback={<Loading />}>
                     {children}
