@@ -84,10 +84,10 @@ export default function Footer() {
                                             <div className="widget_nav_menu">
                                                 <ul className="menu">
                                                     <li><Link href="/services">Our Services</Link></li>
-                                                    <li><Link href="#">Disclaimer</Link></li>
-                                                    <li><Link href="#">Showcase</Link></li>
-                                                    <li><Link href="#">Privacy Policy</Link></li>
-                                                    <li><Link href="#">Affliates</Link></li>
+                                                    <li><Link href="/portfolio">Projects</Link></li>
+                                                    <li><Link href="/contact">Contact</Link></li>
+                                                    <li><Link href="/">Privacy Policy</Link></li>
+                                                    {/* <li><Link href="#">Affliates</Link></li> */}
                                                 </ul>
                                             </div>
                                         </div>
@@ -106,10 +106,10 @@ export default function Footer() {
                                 <div className="widget_nav_menu">
                                     <ul className="menu">
                                         <li><Link href="/services">Services</Link></li>
-                                        <li><Link href="#">Affliates</Link></li>
-                                        <li><Link href="#">Disclaimer</Link></li>
+                                        <li><Link href="/portfolio">Projects</Link></li>
+                                        <li><Link href="/contact">Contact</Link></li>
                                         <li><Link href="#">Privacy Policy</Link></li>
-                                        <li><Link href="#">Career</Link></li>
+                                        {/* <li><Link href="#">Career</Link></li> */}
                                     </ul >
                                 </div >
                                 {/* change */}

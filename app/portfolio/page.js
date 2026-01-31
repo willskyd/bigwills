@@ -3,7 +3,7 @@ import Layout from '@/layouts/layout';
 import dynamic from 'next/dynamic';
 
 export const metadata = {
-    title: 'Portfolio',
+    title: 'Projects',
 }
 
 const PortfolioList = dynamic(
@@ -17,7 +17,7 @@ export default function page() {
     return (
         <Layout>
 
-            <Breadcumb firstChild={"Portfolio"} />
+            <Breadcumb firstChild={"Projects"} />
             <PortfolioList />
 
         </Layout>

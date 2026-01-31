@@ -44,12 +44,12 @@ export default function HomeProject() {
                                           </span>
 
                                             <p>
-                                                {/* <Link href="/portfolio/portfolioSinglePage1">
+                                                <Link href="/portfolio/Bolt_Tensioning_pro">
                                                     <span className="text">More Details</span>
                                                     <span className="arrow">
                                                         <Arrow_r className="fn__svg" />
                                                     </span>
-                                                </Link> */}
+                                                </Link>
                                             </p>
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@ export default function HomeProject() {
                                          </span>
                                         
                                             <p>
-                                                <Link href="/portfolio/portfolioSinglePage2">
+                                                <Link href="/portfolio/Cold_Cutting_pro">
                                                     <span className="text">More Details</span>
                                                     <span className="arrow">
                                                         <Arrow_r className="fn__svg" />
@@ -97,12 +97,12 @@ export default function HomeProject() {
                                          </span>
                                             <p>
 
-                                                {/* <Link href="/portfolio/portfolioSinglePage3">
+                                                <Link href="/portfolio/Fire_&_Gas_System_pro">
                                                     <span className="text">More Details</span>
                                                     <span className="arrow">
                                                         <Arrow_r className="fn__svg" />
                                                     </span>
-                                                </Link> */}
+                                                </Link>
                                             </p>
                                         </div >
                                     </div >
@@ -123,14 +123,14 @@ export default function HomeProject() {
                                            downtime, and operational continuity for the client.
                                          </span>
                                         
-                                            {/* <p>
-                                                <Link href="/portfolio/portfolioSinglePage4">
+                                            <p>
+                                                <Link href="/portfolio/Habitat_Preparation_pro">
                                                     <span className="text">More Details</span>
                                                     <span className="arrow">
                                                         <Arrow_r className="fn__svg" />
                                                     </span>
                                                 </Link>
-                                            </p> */}
+                                            </p>
                                         </div >
                                     </div >
                                 </li >

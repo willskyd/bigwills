@@ -14,9 +14,9 @@ export default function HomePrinciples() {
                                     <div className="title_holder">
                                         <Link href="/principles#Honesty"></Link>
                                         <h3>Honesty</h3>
-                                        <p>Be humble in all dealings with our partners, clients and team members. True wisdom and understanding belong to the humble.</p>
+                                      <p>We believe honesty is the foundation of trust and lasting relationships. In every interaction—with our partners, clients, and team members—we commit to openness, fairness, and truth.</p>
                                         <span className="icon">
-                                            {/* <Arrow_r className="fn__svg" /> */}
+                                            <Arrow_r className="fn__svg" />
                                         </span>
                                     </div>
                                     <div className="number_holder">01</div>
@@ -27,7 +27,7 @@ export default function HomePrinciples() {
                                     <div className="title_holder">
                                         <Link href="/principles#Passion"></Link>
                                         <h3>Passion</h3>
-                                        <p>Success is when we can achieve results in the things we are passionate about and feel as though we are making a difference.</p>
+                                    <p>Passion drives everything we do. It fuels our commitment to excellence and pushes us to go beyond expectations in every project and responsibility.</p>
                                         <span className="icon">
                                             {/* <Arrow_r className="fn__svg" /> */}
                                         </span>
@@ -40,9 +40,9 @@ export default function HomePrinciples() {
                                     <div className="title_holder">
                                         <Link href="/principles#Qualiy"></Link>
                                         <h3>Quality Work</h3>
-                                        <p>We ensure that all projects are done with utmost professionalism using quality materials while offering clients the support and accessibility.</p>
+                                    <p>We are committed to delivering quality work in every detail. Excellence is not an option but a standard that guides how we plan, execute, and deliver our services.</p>
                                         <span className="icon">
-                                            {/* <Arrow_r className="fn__svg" /> */}
+                                            <Arrow_r className="fn__svg" />
                                         </span>
                                     </div>
                                     <div className="number_holder">03</div>
