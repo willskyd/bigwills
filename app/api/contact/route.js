@@ -9,10 +9,10 @@ import path from 'path'
 export async function POST(req) {
   try {
     const body = await req.json()
-    const { name, email, message } = body
+    const { name, email, company, phone, subject, message } = body
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+      return NextResponse.json({ error: 'Missing required fields (name, email, message)' }, { status: 400 })
     }
 
     // Forward to external API if provided
@@ -20,12 +20,35 @@ export async function POST(req) {
     const apiBase = process.env.API_BASE // should be full URL like https://api.example.com/contacts
     if (apiBase) {
       try {
+        const payload = {
+          name,
+          email,
+          company: company || '',
+          phone: phone || '',
+          subject: subject || '',
+          message,
+          status: 'new',
+          createdAt: new Date().toISOString(),
+        }
+
+        const headers = { 'Content-Type': 'application/json' }
+        // support optional API key header; set API_KEY and optionally API_KEY_HEADER
+        if (process.env.API_KEY) {
+          const headerName = process.env.API_KEY_HEADER || 'Authorization'
+          if (headerName.toLowerCase() === 'authorization') {
+            headers['Authorization'] = `Bearer ${process.env.API_KEY}`
+          } else {
+            headers[process.env.API_KEY_HEADER] = process.env.API_KEY
+          }
+        }
+
         const forwardResp = await fetch(apiBase, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, message }),
+          headers,
+          body: JSON.stringify(payload),
         })
-        externalResult = { ok: forwardResp.ok, status: forwardResp.status }
+        const text = await forwardResp.text()
+        externalResult = { ok: forwardResp.ok, status: forwardResp.status, body: text }
       } catch (err) {
         externalResult = { ok: false, error: String(err) }
       }
@@ -79,7 +102,10 @@ export async function POST(req) {
       await fs.promises.mkdir(notificationsDir, { recursive: true })
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
       const filename = path.join(notificationsDir, `contact-${timestamp}.json`)
-      await fs.promises.writeFile(filename, JSON.stringify({ name, email, message, forwarded: externalResult, emailed }, null, 2))
+      await fs.promises.writeFile(
+        filename,
+        JSON.stringify({ name, email, company, phone, subject, message, forwarded: externalResult, emailed, createdAt: new Date().toISOString() }, null, 2)
+      )
     } catch (err) {
       console.error('Failed writing notification file', err)
     }
