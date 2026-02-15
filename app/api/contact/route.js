@@ -54,47 +54,12 @@ export async function POST(req) {
       }
     }
 
-    // Try to send email notification if SMTP env vars and NOTIFY_EMAIL are set
+    // Email notifications are disabled in this build by default to avoid
+    // bundling server-only libraries. If you want email notifications,
+    // install `nodemailer` and run sending logic from a separate worker
+    // or add your SMTP/email provider webhook. For now we keep `emailed`
+    // false and rely on forwarding + file fallback.
     let emailed = false
-    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS && process.env.NOTIFY_EMAIL) {
-      try {
-        // require nodemailer dynamically without letting bundlers try to resolve it at build time
-        let nodemailer = null
-        try {
-          // eval prevents webpack from statically analyzing the require call
-          nodemailer = eval("require")('nodemailer')
-        } catch (e) {
-          // nodemailer not installed — skip emailing
-          nodemailer = null
-        }
-        if (nodemailer) {
-          const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: Number(process.env.SMTP_PORT || 587),
-            secure: process.env.SMTP_SECURE === 'true',
-            auth: {
-              user: process.env.SMTP_USER,
-              pass: process.env.SMTP_PASS,
-            },
-          })
-
-          const mailBody = `New contact form submission\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`
-
-          await transporter.sendMail({
-            from: process.env.SMTP_FROM || process.env.SMTP_USER,
-            to: process.env.NOTIFY_EMAIL,
-            subject: `New contact from ${name}`,
-            text: mailBody,
-          })
-          emailed = true
-        } else {
-          console.warn('nodemailer not installed; skipping email send')
-        }
-      } catch (err) {
-        // continue — fallbacks will handle notification persistence
-        console.error('Error sending notification email:', err)
-      }
-    }
 
     // Fallback: write to notifications folder so you can review submissions if email not configured
     try {
