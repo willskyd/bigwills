@@ -62,7 +62,7 @@ export default function page() {
                                             </div>
                                         </li>
 
-                                        <li className="location_item">
+                                        {/* <li className="location_item">
                                             <div className="item">
                                                 <div className="title_holder">
                                                     <span className="icon_wrapper">
@@ -81,9 +81,9 @@ export default function page() {
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> */}
 
-                                        <li className="location_item">
+                                        {/* <li className="location_item">
                                             <div className="item">
                                                 <div className="title_holder">
                                                     <span className="icon_wrapper">
@@ -102,7 +102,7 @@ export default function page() {
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> */}
 
                                     </ul>
                                 </div>

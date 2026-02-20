@@ -1,0 +1,16 @@
+{
+  "name": "Godswill Kingsley",
+  "email": "godswillkingsley439@gmail.com",
+  "company": "",
+  "phone": "09042691143",
+  "subject": "",
+  "message": "no message",
+  "status": "new",
+  "createdAt": "2026-02-16T08:55:04.428Z",
+  "forwarded": {
+    "ok": false,
+    "error": "TypeError: fetch failed",
+    "url": "http://127.0.0.1:8000/api/contact"
+  },
+  "emailed": false
+}

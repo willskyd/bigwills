@@ -1,4 +1,5 @@
 "use client"
+import axios from 'axios'
 import { useState } from 'react'
 
 export default function ContactForm() {
@@ -15,27 +16,33 @@ export default function ContactForm() {
     e.preventDefault()
     setLoading(true)
     setStatus(null)
+    const payload = { name, email, company, phone, subject, message }
     try {
-      const payload = { name, email, company, phone, subject, message }
-      const res = await fetch('/api/contact', {
-        method: 'POST',
+// https://v0-latest-torqtech-dashboard.vercel.app/api/contact-requests
+      const response = await axios.post('https://v0-latest-torqtech-dashboard.vercel.app/api/contact-requests', payload, {
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
       })
-      const data = await res.json()
-      if (res.ok) {
-        setStatus({ type: 'success', text: 'Message sent — thank you!' })
-        setName('')
-        setEmail('')
-        setCompany('')
-        setPhone('')
-        setSubject('')
-        setMessage('')
-      } else {
-        setStatus({ type: 'error', text: data?.error || 'Failed to send message' })
-      }
+      const result = response?.data || {}
+      const target = result?.forwarded?.url ? ` Forwarded to: ${result.forwarded.url}.` : ''
+
+      setStatus({ type: 'success', text: `Message sent - th..ank you!${target}` })
+      setName('')
+      setEmail('')
+      setCompany('')
+      setPhone('')
+      setSubject('')
+      setMessage('')
     } catch (err) {
-      setStatus({ type: 'error', text: err.message || 'Network error' })
+      const data = err?.response?.data || {}
+      const hasAuthFailure = (data?.forwarded?.attempts || []).some(
+        (attempt) => attempt?.status === 401 || attempt?.status === 403
+      )
+      const reason = data?.forwarded?.error ? ` (${data.forwarded.error})` : ''
+      const authHint = hasAuthFailure ? ' Backend auth failed (401/403). Check API_KEY/API_KEY_JSON in server env.' : ''
+      setStatus({
+        type: 'error',
+        text: `${data?.error || err?.message || 'Failed to send message'}${reason}${authHint}`,
+      })
     } finally {
       setLoading(false)
     }

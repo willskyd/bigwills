@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form Sample</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; }
+      form { max-width: 640px; display: grid; gap: 0.75rem; }
+      input, textarea, button { padding: 0.65rem; font-size: 1rem; }
+      #contactStatus[data-type="success"] { color: #0f7a2f; }
+      #contactStatus[data-type="error"] { color: #b42318; }
+    </style>
+  </head>
+  <body>
+    <h1>Contact Form</h1>
+    <form id="contactForm" novalidate>
+      <input id="name" name="name" type="text" placeholder="Name" required />
+      <input id="email" name="email" type="email" placeholder="Email" required />
+      <input id="company" name="company" type="text" placeholder="Company" />
+      <input id="phone" name="phone" type="text" placeholder="Phone" />
+      <input id="subject" name="subject" type="text" placeholder="Subject" />
+      <textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="contactStatus" role="status" aria-live="polite"></div>
+    </form>
+
+    <script>
+      // Optional endpoint override.
+      // Use your Next.js route by default: /api/contact
+      window.CONTACT_CONFIG = {
+        endpoint: "/api/contact"
+      };
+    </script>
+    <script type="module" src="/js/contact.js"></script>
+  </body>
+</html>

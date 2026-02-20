@@ -1,0 +1,32 @@
+{
+  "_id": "local-1771427917081",
+  "name": "Godswill Kingsley",
+  "email": "godswillkingsley439@gmail.com",
+  "company": "",
+  "phone": "09042691143",
+  "subject": "",
+  "message": "no message",
+  "status": "new",
+  "createdAt": "2026-02-18T15:18:37.081Z",
+  "updatedAt": "2026-02-18T15:18:37.081Z",
+  "__v": 0,
+  "forwarded": {
+    "ok": false,
+    "error": "Forwarding failed for all configured endpoints.",
+    "attempts": [
+      {
+        "ok": false,
+        "error": "Error: API auth enabled but JSON credentials are missing. Set API_KEY_JSON or SERVICE_ACCOUNT_FILE.",
+        "url": "https://v0-latest-torqtech-dashboard.vercel.app/api/notifications",
+        "mode": "notification"
+      },
+      {
+        "ok": false,
+        "error": "Error: API auth enabled but JSON credentials are missing. Set API_KEY_JSON or SERVICE_ACCOUNT_FILE.",
+        "url": "https://v0-latest-torqtech-dashboard.vercel.app/api/notifications",
+        "mode": "contact"
+      }
+    ]
+  },
+  "emailed": false
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Godswill Kingsley",
+  "email": "godswillkingsley439@gmail.com",
+  "company": "",
+  "phone": "09042691143",
+  "subject": "",
+  "message": "no message",
+  "status": "new",
+  "createdAt": "2026-02-15T18:55:56.174Z",
+  "forwarded": {
+    "ok": false,
+    "error": "No backend URL configured. Set CONTACT_API_URL, CONTACT_WEBHOOK_URL, BACKEND_CONTACT_URL, API_BASE, BACKEND_URL, or BACKEND_BASE_URL."
+  },
+  "emailed": false
+}

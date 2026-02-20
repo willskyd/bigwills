@@ -1,0 +1,35 @@
+{
+  "_id": "local-1771422474667",
+  "name": "Godswill Kingsley",
+  "email": "godswillkingsley439@gmail.com",
+  "company": "",
+  "phone": "09042691143",
+  "subject": "",
+  "message": "no message",
+  "status": "new",
+  "createdAt": "2026-02-18T13:47:54.667Z",
+  "updatedAt": "2026-02-18T13:47:54.667Z",
+  "__v": 0,
+  "forwarded": {
+    "ok": false,
+    "error": "Forwarding failed for all configured endpoints.",
+    "attempts": [
+      {
+        "ok": false,
+        "error": "TypeError: fetch failed",
+        "url": "http://127.0.0.1:8000/api/contacts"
+      },
+      {
+        "ok": false,
+        "error": "TypeError: fetch failed",
+        "url": "http://127.0.0.1:8000/api/inquiries"
+      },
+      {
+        "ok": false,
+        "error": "TypeError: fetch failed",
+        "url": "http://127.0.0.1:8000/api/contact"
+      }
+    ]
+  },
+  "emailed": false
+}
