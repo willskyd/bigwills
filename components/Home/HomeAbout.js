@@ -3,6 +3,7 @@ export default function HomeAbout() {
     return (
         <>
             <div className="about_section">
+                {/* <!-- Background --> */}
 
                 {/* <!-- About Shortcode --> */}
                 <div className="fn_cs_about">
