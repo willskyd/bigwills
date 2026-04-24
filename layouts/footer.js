@@ -1,4 +1,3 @@
-// import ScrollUpBtn from '@/components/Scrollup/ScrollupBtn'
 import Link from 'next/link'
 
 export default function Footer() {
